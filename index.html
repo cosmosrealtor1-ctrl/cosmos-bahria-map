@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="ur" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="theme-color" content="#0b5d3b">
-<title>بحریہ ٹاؤن کراچی پلاٹ نقشہ | Cosmos Realtor</title>
+<title>Bahria Town Karachi Plot Map | Cosmos Realtor</title>
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="lib/leaflet.css">
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;height:100%;font-family:"Noto Naskh Arabic","Jameel Noori Nastaleeq","Segoe UI",Tahoma,sans-serif}
+html,body{margin:0;height:100%;font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 #map{position:absolute;top:56px;bottom:30px;left:0;right:0;background:#222}
 header{position:absolute;top:0;left:0;right:0;height:56px;background:#0b5d3b;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 12px;z-index:1000}
 header h1{font-size:18px;margin:0;line-height:1.2}
@@ -17,7 +17,7 @@ header a{color:#ffe082;font-size:14px;text-decoration:none;direction:ltr}
 footer{position:absolute;bottom:0;left:0;right:0;height:30px;background:#0b5d3b;color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;gap:10px;z-index:1000}
 footer a{color:#ffe082;text-decoration:none;direction:ltr}
 #search{position:absolute;top:66px;right:10px;left:76px;z-index:1000;display:flex;gap:6px}
-#q{flex:1;font-size:19px;padding:10px 12px;border-radius:12px;border:2px solid #0b5d3b;min-width:0;direction:rtl}
+#q{flex:1;font-size:19px;padding:10px 12px;border-radius:12px;border:2px solid #0b5d3b;min-width:0}
 .btn{font-size:18px;min-width:52px;min-height:50px;border:0;border-radius:12px;background:#0b5d3b;color:#fff;font-family:inherit;box-shadow:0 2px 6px rgba(0,0,0,.35)}
 .btn:active{background:#08402a}
 #results{position:absolute;top:124px;right:10px;left:10px;max-height:45%;overflow:auto;background:#fff;border-radius:12px;z-index:1001;display:none;box-shadow:0 3px 10px rgba(0,0,0,.4)}
@@ -35,28 +35,28 @@ footer a{color:#ffe082;text-decoration:none;direction:ltr}
 .me{width:20px;height:20px;border-radius:50%;background:#1e88e5;border:3px solid #fff;box-shadow:0 0 0 2px #1e88e5}
 .hl{width:34px;height:34px;border-radius:50%;border:4px solid #ff1744;background:rgba(255,23,68,.25);animation:p 1.2s infinite}
 @keyframes p{0%{transform:scale(.7)}50%{transform:scale(1.3)}100%{transform:scale(.7)}}
-.leaflet-popup-content{font-size:17px;direction:rtl;text-align:right;font-family:inherit}
+.leaflet-popup-content{font-size:17px;font-family:inherit}
 .leaflet-top.leaflet-left{top:76px}
 .leaflet-control-zoom a{width:44px!important;height:44px!important;line-height:44px!important;font-size:24px!important}
 #toast{position:absolute;top:130px;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:10px 16px;border-radius:10px;z-index:1002;font-size:16px;display:none}
 </style>
 </head>
 <body>
-<header><h1>بحریہ ٹاؤن کراچی<br><span style="font-size:13px;font-weight:normal">پلاٹ نقشہ</span></h1><a href="https://cosmosrealtor.pk" target="_blank">Cosmos Realtor<br>cosmosrealtor.pk</a></header>
+<header><h1>Bahria Town Karachi<br><span style="font-size:13px;font-weight:normal">Plot Map</span></h1><a href="https://cosmosrealtor.pk" target="_blank">Cosmos Realtor<br>cosmosrealtor.pk</a></header>
 <div id="map"></div>
-<div id="search"><input id="q" type="search" inputmode="search" placeholder="پلاٹ نمبر لکھیں" autocomplete="off"><button class="btn" id="go">تلاش</button></div>
-<button class="btn" id="loc" title="میری جگہ">◎</button>
+<div id="search"><input id="q" type="search" inputmode="search" placeholder="Plot no. e.g. 17 707" autocomplete="off"><button class="btn" id="go">Search</button></div>
+<button class="btn" id="loc" title="My location">◎</button>
 <div id="results"></div>
 <div id="toast"></div>
 <div id="panel">
- <label>نقشہ کتنا گہرا ہو: <b id="opv">55%</b></label>
+ <label>Map opacity: <b id="opv">55%</b></label>
  <input id="op" type="range" min="0" max="100" value="55">
- <div class="row"><button class="btn on" data-b="esri">Esri تصویر</button><button class="btn" data-b="google">Google تصویر</button><button class="btn" id="hide">نقشہ چھپائیں</button></div>
+ <div class="row"><button class="btn on" data-b="esri">Esri Satellite</button><button class="btn" data-b="google">Google Satellite</button><button class="btn" id="hide">Hide Map</button></div>
 </div>
 <footer><a href="https://cosmosrealtor.pk" target="_blank">cosmosrealtor.pk</a><span style="direction:ltr">UAN 111-267-667</span></footer>
 <script src="lib/leaflet.js"></script>
 <script>
-const B=[[24.9878,67.2766],[25.0675,67.3563]];
+const B=[[24.9855,67.2771],[25.0683,67.3594]];
 const map=L.map('map',{zoomControl:true,attributionControl:true,maxZoom:20,minZoom:12}).fitBounds(B);
 map.zoomControl.setPosition('topleft');
 const base={
@@ -64,25 +64,25 @@ const base={
  google:L.tileLayer('https://mt{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}',{subdomains:'0123',maxZoom:20,attribution:'Google'})
 };
 let cur=base.esri.addTo(map);
-const plan=L.tileLayer('tiles/{z}/{x}/{y}.webp',{minZoom:12,maxZoom:20,minNativeZoom:13,maxNativeZoom:18,bounds:B,opacity:.55,attribution:'نقشہ: Cosmos Realtor'}).addTo(map);
+const plan=L.tileLayer('tiles/{z}/{x}/{y}.webp',{minZoom:12,maxZoom:20,minNativeZoom:13,maxNativeZoom:18,bounds:B,opacity:.55,attribution:'Plan: Cosmos Realtor'}).addTo(map);
 document.querySelectorAll('[data-b]').forEach(b=>b.onclick=()=>{map.removeLayer(cur);cur=base[b.dataset.b].addTo(map);cur.bringToBack();document.querySelectorAll('[data-b]').forEach(x=>x.classList.toggle('on',x===b));});
 const op=document.getElementById('op'),opv=document.getElementById('opv');
 op.oninput=()=>{plan.setOpacity(op.value/100);opv.textContent=op.value+'%';};
 const hide=document.getElementById('hide');
-hide.onclick=()=>{if(map.hasLayer(plan)){map.removeLayer(plan);hide.textContent='نقشہ دکھائیں';hide.classList.remove('on')}else{plan.addTo(map);hide.textContent='نقشہ چھپائیں'}};
+hide.onclick=()=>{if(map.hasLayer(plan)){map.removeLayer(plan);hide.textContent='Show Map';hide.classList.remove('on')}else{plan.addTo(map);hide.textContent='Hide Map'}};
 function toast(t,ms){const e=document.getElementById('toast');e.textContent=t;e.style.display='block';clearTimeout(e._t);e._t=setTimeout(()=>e.style.display='none',ms||3000);}
 // my location
 let watch=null,me=null,acc=null,first=true;const lb=document.getElementById('loc');
 lb.onclick=()=>{
  if(watch!==null){navigator.geolocation.clearWatch(watch);watch=null;lb.classList.remove('on');if(me){map.removeLayer(me);map.removeLayer(acc);me=null;}return;}
- if(!navigator.geolocation){toast('اس فون میں GPS نہیں ملا');return;}
- lb.classList.add('on');first=true;toast('آپ کی جگہ ڈھونڈ رہے ہیں...');
+ if(!navigator.geolocation){toast('Location is not available on this device');return;}
+ lb.classList.add('on');first=true;toast('Finding your location...');
  watch=navigator.geolocation.watchPosition(p=>{
   const ll=[p.coords.latitude,p.coords.longitude];
   if(!me){me=L.marker(ll,{icon:L.divIcon({className:'',html:'<div class="me"></div>',iconSize:[20,20]})}).addTo(map);acc=L.circle(ll,{radius:p.coords.accuracy,color:'#1e88e5',weight:1,fillOpacity:.12}).addTo(map);}
   else{me.setLatLng(ll);acc.setLatLng(ll).setRadius(p.coords.accuracy);}
   if(first){map.setView(ll,Math.max(map.getZoom(),17));first=false;}
- },e=>{toast('جگہ نہیں ملی۔ فون کی Location آن کریں اور اجازت دیں');lb.classList.remove('on');watch=null;},{enableHighAccuracy:true,maximumAge:2000,timeout:20000});
+ },e=>{toast('Location not found. Turn on Location and allow access.');lb.classList.remove('on');watch=null;},{enableHighAccuracy:true,maximumAge:2000,timeout:20000});
 };
 // search
 let P=[],hl=null;
@@ -95,7 +95,7 @@ function show(p){
  map.flyTo([p[2],p[3]],18,{duration:1.2});
  if(hl)map.removeLayer(hl);
  hl=L.marker([p[2],p[3]],{icon:L.divIcon({className:'',html:'<div class="hl"></div>',iconSize:[34,34]})}).addTo(map)
-  .bindPopup('<b>پلاٹ '+p[0]+'</b><br>'+(p[1]?'پریسنکٹ '+p[1]:'پریسنکٹ معلوم نہیں')+'<br><span style="font-size:13px;color:#777">جگہ تقریباً ہے، 50 سے 100 میٹر کا فرق ہو سکتا ہے</span><br><a target="_blank" href="https://www.google.com/maps?q='+p[2]+','+p[3]+'">Google Maps میں کھولیں</a>');
+  .bindPopup('<b>Plot '+p[0]+'</b><br>'+(p[1]?'Precinct '+p[1]:'Precinct unknown')+'<br><span style="font-size:13px;color:#777">Approximate location – may be off by about 20–50 m</span><br><a target="_blank" href="https://www.google.com/maps?q='+p[2]+','+p[3]+'">Open in Google Maps</a>');
  setTimeout(()=>hl.openPopup(),1300);
 }
 function search(){
@@ -107,10 +107,10 @@ function search(){
  let m=P.filter(p=>norm(p[0])===n&&(!pr||norm(p[1])===pr));
  if(!m.length&&pr){m=P.filter(p=>norm(p[0])===n);}
  R.innerHTML='';
- if(!m.length){R.innerHTML='<div class="hint">یہ پلاٹ نمبر نقشے میں نہیں ملا۔ ہو سکتا ہے نقشے پر یہ نمبر لکھا نہ ہو۔</div>';R.style.display='block';return;}
+ if(!m.length){R.innerHTML='<div class="hint">Plot number not found. It may not be printed on the master plan.</div>';R.style.display='block';return;}
  if(m.length===1){show(m[0]);return;}
- R.innerHTML='<div class="hint">'+m.length+' جگہوں پر یہ نمبر ملا، ایک چنیں:</div>';
- m.sort((a,b)=>(a[1]||'zz').localeCompare(b[1]||'zz',undefined,{numeric:true})).forEach(p=>{const d=document.createElement('div');d.textContent='پلاٹ '+p[0]+' — '+(p[1]?'پریسنکٹ '+p[1]:'پریسنکٹ ؟');d.onclick=()=>show(p);R.appendChild(d);});
+ R.innerHTML='<div class="hint">'+m.length+' matches found – choose one:</div>';
+ m.sort((a,b)=>(a[1]||'zz').localeCompare(b[1]||'zz',undefined,{numeric:true})).forEach(p=>{const d=document.createElement('div');d.textContent='Plot '+p[0]+' — '+(p[1]?'Precinct '+p[1]:'Precinct ?');d.onclick=()=>show(p);R.appendChild(d);});
  R.style.display='block';
 }
 document.getElementById('go').onclick=search;
