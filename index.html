@@ -20,16 +20,22 @@ footer a{color:#ffe082;text-decoration:none;direction:ltr}
 #q{flex:1;font-size:19px;padding:10px 12px;border-radius:12px;border:2px solid #0b5d3b;min-width:0}
 .btn{font-size:18px;min-width:52px;min-height:50px;border:0;border-radius:12px;background:#0b5d3b;color:#fff;font-family:inherit;box-shadow:0 2px 6px rgba(0,0,0,.35)}
 .btn:active{background:#08402a}
-#results{position:absolute;top:124px;right:10px;left:10px;max-height:45%;overflow:auto;background:#fff;border-radius:12px;z-index:1001;display:none;box-shadow:0 3px 10px rgba(0,0,0,.4)}
+#results{position:absolute;top:124px;right:10px;left:10px;max-height:52%;overflow:auto;background:#fff;border-radius:12px;z-index:1001;display:none;box-shadow:0 3px 10px rgba(0,0,0,.4)}
 #results div{padding:13px 14px;font-size:18px;border-bottom:1px solid #eee}
 #results div:active{background:#e8f5e9}
 #results .hint{color:#666;font-size:15px}
 #panel{position:absolute;bottom:38px;right:10px;left:10px;z-index:1000;background:rgba(255,255,255,.95);border-radius:14px;padding:6px 10px;box-shadow:0 2px 8px rgba(0,0,0,.35)}
-#panel label{font-size:16px}
-#op{width:100%;height:30px;margin:2px 0}
-.row{display:flex;gap:6px;margin-top:4px}
-.row .btn{flex:1;font-size:16px;min-height:44px;background:#555}
-.row .btn.on{background:#0b5d3b}
+#panel label{font-size:15px;white-space:nowrap}
+.orow{display:flex;align-items:center;gap:8px}
+#op{flex:1;min-width:0;height:30px;margin:2px 0}
+.btn.sm{font-size:14px;min-height:38px;min-width:0;padding:0 10px;background:#555}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px}
+.grid .btn{font-size:15px;min-height:42px;background:#555}
+.grid .btn.on{background:#0b5d3b}
+#results div{display:flex;align-items:center;gap:10px;min-height:52px}
+#results .tag{font-size:12px;color:#fff;background:#0b5d3b;border-radius:6px;padding:2px 6px;flex:none}
+#results .tag.a{background:#8d6e00}#results .tag.p{background:#c62828}
+#results .sub{font-size:13px;color:#777;margin-left:auto;text-align:right}
 #loc{position:absolute;left:10px;top:66px;z-index:1000;width:56px;height:56px;border-radius:50%;font-size:26px;padding:0}
 #loc.on{background:#1565c0}
 .me{width:20px;height:20px;border-radius:50%;background:#1e88e5;border:3px solid #fff;box-shadow:0 0 0 2px #1e88e5}
@@ -44,14 +50,13 @@ footer a{color:#ffe082;text-decoration:none;direction:ltr}
 <body>
 <header><h1>Bahria Town Karachi<br><span style="font-size:13px;font-weight:normal">Plot Map</span></h1><a href="https://cosmosrealtor.pk" target="_blank">Cosmos Realtor<br>cosmosrealtor.pk</a></header>
 <div id="map"></div>
-<div id="search"><input id="q" type="search" inputmode="search" placeholder="Plot no. e.g. 17 707" autocomplete="off"><button class="btn" id="go">Search</button></div>
+<div id="search"><input id="q" type="search" inputmode="search" placeholder="BTK, area or plot (e.g. BTK 17 707)" autocomplete="off"><button class="btn" id="go">Search</button></div>
 <button class="btn" id="loc" title="My location">◎</button>
 <div id="results"></div>
 <div id="toast"></div>
 <div id="panel">
- <label>Map opacity: <b id="opv">55%</b></label>
- <input id="op" type="range" min="0" max="100" value="55">
- <div class="row"><button class="btn on" data-b="esri">Esri Satellite</button><button class="btn" data-b="google">Google Satellite</button><button class="btn" id="hide">Hide Map</button></div>
+ <div class="orow"><label>Map opacity: <b id="opv">55%</b></label><input id="op" type="range" min="0" max="100" value="55"><button class="btn sm" id="hide">Hide Map</button></div>
+ <div class="grid"><button class="btn on" data-b="esri">Esri Satellite</button><button class="btn" data-b="esrih">Esri Hybrid</button><button class="btn" data-b="google">Google Satellite</button><button class="btn" data-b="googleh">Google Hybrid</button></div>
 </div>
 <footer><a href="https://cosmosrealtor.pk" target="_blank">cosmosrealtor.pk</a><span style="direction:ltr">UAN 111-267-667</span></footer>
 <script src="lib/leaflet.js"></script>
@@ -59,13 +64,14 @@ footer a{color:#ffe082;text-decoration:none;direction:ltr}
 const B=[[24.9855,67.2771],[25.0683,67.3594]];
 const map=L.map('map',{zoomControl:true,attributionControl:true,maxZoom:20,minZoom:12}).fitBounds(B);
 map.zoomControl.setPosition('topleft');
-const base={
- esri:L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:20,maxNativeZoom:19,attribution:'Esri'}),
- google:L.tileLayer('https://mt{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}',{subdomains:'0123',maxZoom:20,attribution:'Google'})
-};
+const esriImg=()=>L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:20,maxNativeZoom:19,attribution:'Esri',zIndex:1});
+map.createPane('labels');map.getPane('labels').style.zIndex=450;map.getPane('labels').style.pointerEvents='none';
+const ref=n=>L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/'+n+'/MapServer/tile/{z}/{y}/{x}',{maxZoom:20,maxNativeZoom:19,pane:'labels'});
+const gl=l=>L.tileLayer('https://mt{s}.google.com/vt/lyrs='+l+'&x={x}&y={y}&z={z}',{subdomains:'0123',maxZoom:20,attribution:'Google',zIndex:1});
+const base={esri:esriImg(),esrih:L.layerGroup([esriImg(),ref('Reference/World_Transportation'),ref('Reference/World_Boundaries_and_Places')]),google:gl('s'),googleh:gl('y')};
 let cur=base.esri.addTo(map);
-const plan=L.tileLayer('tiles/{z}/{x}/{y}.webp',{minZoom:12,maxZoom:20,minNativeZoom:13,maxNativeZoom:18,bounds:B,opacity:.55,attribution:'Plan: Cosmos Realtor'}).addTo(map);
-document.querySelectorAll('[data-b]').forEach(b=>b.onclick=()=>{map.removeLayer(cur);cur=base[b.dataset.b].addTo(map);cur.bringToBack();document.querySelectorAll('[data-b]').forEach(x=>x.classList.toggle('on',x===b));});
+const plan=L.tileLayer('tiles/{z}/{x}/{y}.webp',{minZoom:12,maxZoom:20,minNativeZoom:13,maxNativeZoom:18,bounds:B,opacity:.55,zIndex:5,attribution:'Plan: Cosmos Realtor'}).addTo(map);
+document.querySelectorAll('[data-b]').forEach(b=>b.onclick=()=>{map.removeLayer(cur);cur=base[b.dataset.b].addTo(map);if(cur.bringToBack)cur.bringToBack();document.querySelectorAll('[data-b]').forEach(x=>x.classList.toggle('on',x===b));});
 const op=document.getElementById('op'),opv=document.getElementById('opv');
 op.oninput=()=>{plan.setOpacity(op.value/100);opv.textContent=op.value+'%';};
 const hide=document.getElementById('hide');
@@ -84,37 +90,75 @@ lb.onclick=()=>{
   if(first){map.setView(ll,Math.max(map.getZoom(),17));first=false;}
  },e=>{toast('Location not found. Turn on Location and allow access.');lb.classList.remove('on');watch=null;},{enableHighAccuracy:true,maximumAge:2000,timeout:20000});
 };
-// search
-let P=[],hl=null;
-fetch('plots.json').then(r=>r.json()).then(d=>{P=d;});
+// search: society -> areas -> plots
+let SOC=[],hl=null,sel=null;const PL={};
+fetch('areas.json').then(r=>r.json()).then(d=>{SOC=d.societies;SOC.forEach(so=>{so.areas.forEach(a=>{a.n=a.name.toLowerCase();a.k=(a.name+' '+(a.aka||'')).toLowerCase();});fetch(so.plots).then(r=>r.json()).then(p=>PL[so.code]=p);});});
 const ud=s=>s.replace(/[۰-۹]/g,c=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(c)).replace(/[٠-٩]/g,c=>'٠١٢٣٤٥٦٧٨٩'.indexOf(c));
 const norm=s=>ud(String(s)).toUpperCase().replace(/[^0-9A-Z]/g,'').replace(/^0+(?=\d)/,'');
-const R=document.getElementById('results');
+const R=document.getElementById('results'),Q=document.getElementById('q');
+const dist=(a,b)=>{const k=Math.cos(a[0]*Math.PI/180);return Math.hypot(a[0]-b[0],(a[1]-b[1])*k)*111320;};
+function areaMatch(so,q){ // q: lowercase text
+ q=q.trim().replace(/^(precinct|p)\s*-?\s*(?=\d)/,'');if(!q)return so.areas.slice();
+ const pn=norm(q),out=[];
+ so.areas.forEach(a=>{let sc=0;
+  if(a.type==='precinct'){if(norm(a.precinct)===pn)sc=100;else if(/^\d/.test(q)&&norm(a.precinct).startsWith(pn))sc=60;}
+  if(!sc){if(a.n.startsWith(q))sc=80;else{const W=a.k.split(/[\s()\-+&]+/).filter(Boolean);if(q.split(' ').every(t=>W.some(w=>w.startsWith(t))))sc=70;}if(!sc&&a.k.includes(q))sc=40;}
+  if(sc)out.push([sc,a]);});
+ return out.sort((x,y)=>y[0]-x[0]).map(x=>x[1]);
+}
+function inArea(so,a,p){if(a.type==='precinct')return norm(p[1])===norm(a.precinct);return !!a.r&&dist(a.center,[p[2],p[3]])<=a.r;}
+function suggest(go){
+ const raw=ud(Q.value).replace(/\s+/g,' ').trimStart();const items=[];
+ let toks=raw.split(' ').filter(Boolean),so=SOC[0],hasSoc=false;
+ if(toks.length&&SOC.some(s=>s.code.toLowerCase()===toks[0].toLowerCase())){so=SOC.find(s=>s.code.toLowerCase()===toks[0].toLowerCase());toks=toks.slice(1);hasSoc=true;}
+ if(!so){R.style.display='none';return;}
+ const plots=PL[so.code]||[];
+ if(!toks.length){if(!hasSoc){R.style.display='none';return;}areaMatch(so,'').forEach(a=>items.push({a,so}));}
+ else{
+  const last=toks[toks.length-1],pre=toks.slice(0,-1).join(' ').toLowerCase();
+  if(toks.length>=2&&/^\d+[a-z]?$/i.test(last)){ // area + plot
+   const n=norm(last);
+   areaMatch(so,pre).slice(0,4).forEach(a=>{const m=plots.filter(p=>norm(p[0])===n&&inArea(so,a,p));
+    if(m.length)m.forEach(p=>items.push({p,so,a}));else items.push({a,so,note:'Plot '+last+' not indexed here – go to area'});});
+   if(!items.some(i=>i.p)&&/^\d+$/.test(pre)){plots.filter(p=>norm(p[0])===n).forEach(p=>items.push({p,so,alt:1}));}
+  }
+  areaMatch(so,toks.join(' ').toLowerCase()).forEach(a=>{if(!items.some(i=>i.a===a&&!i.p))items.push({a,so});});
+  if(toks.length===1&&/^\d+[a-z]?$/i.test(last)){const n=norm(last);plots.filter(p=>norm(p[0])===n).forEach(p=>items.push({p,so}));}
+ }
+ if(go&&items.length){const ps=items.filter(i=>i.p&&!i.alt);if(toks.length>=2&&ps.length===1){pick(ps[0]);return;}if(items.length===1||(!ps.length&&!items[0].p&&toks.length)){pick(items[0]);return;}}
+ render(items.slice(0,80),raw);
+}
+function render(items,raw){
+ R.innerHTML='';
+ if(!items.length){R.innerHTML='<div class="hint">No match. Try "BTK" to see all areas, or e.g. "17 707".</div>';R.style.display=raw?'block':'none';return;}
+ items.forEach(i=>{const d=document.createElement('div');
+  if(i.p)d.innerHTML='<span class="tag p">PLOT</span><span>Plot <b>'+i.p[0]+'</b></span><span class="sub">'+i.so.code+' · Precinct '+(i.p[1]||'?')+(i.alt?' (other precinct)':'')+'</span>';
+  else d.innerHTML='<span class="tag'+(i.a.type==='precinct'?'':' a')+'">'+(i.a.type==='precinct'?'PRECINCT':'AREA')+'</span><span>'+i.a.name+(i.a.aka?' <span class="sub" style="margin:0">('+i.a.aka+')</span>':'')+'</span><span class="sub">'+(i.note||i.so.code)+'</span>';
+  d.onclick=()=>pick(i);R.appendChild(d);});
+ R.style.display='block';
+}
+function pick(i){
+ if(i.p){Q.value=i.so.code+' '+(i.p[1]||'')+' '+i.p[0];show(i.p);return;}
+ const a=i.a;Q.value=i.so.code+' '+(a.type==='precinct'?a.precinct:a.name)+' ';
+ R.style.display='none';Q.blur();
+ if(a.bounds)map.flyToBounds(a.bounds,{padding:[20,20],duration:1.1});
+ else map.flyTo(a.center,a.r?Math.max(14,Math.min(18,Math.round(16-Math.log2(a.r/300)))):16,{duration:1.1});
+ if(hl)map.removeLayer(hl);
+ hl=L.circleMarker(a.center,{radius:9,color:'#ff1744',weight:3,fillOpacity:.3}).addTo(map).bindPopup('<b>'+a.name+'</b>'+(a.aka?'<br>'+a.aka:'')+'<br>'+i.so.name+(a.src&&a.src.indexOf('key plan')===0?'<br><span style="font-size:13px;color:#777">Outside the master plan – position approximate (±500 m)</span>':'')+'<br><a target="_blank" href="https://www.google.com/maps?q='+a.center[0]+','+a.center[1]+'">Open in Google Maps</a>');
+ setTimeout(()=>hl.openPopup(),1200);
+}
 function show(p){
- R.style.display='none';document.getElementById('q').blur();
+ R.style.display='none';Q.blur();
  map.flyTo([p[2],p[3]],18,{duration:1.2});
  if(hl)map.removeLayer(hl);
  hl=L.marker([p[2],p[3]],{icon:L.divIcon({className:'',html:'<div class="hl"></div>',iconSize:[34,34]})}).addTo(map)
   .bindPopup('<b>Plot '+p[0]+'</b><br>'+(p[1]?'Precinct '+p[1]:'Precinct unknown')+'<br><span style="font-size:13px;color:#777">Approximate location – may be off by about 20–50 m</span><br><a target="_blank" href="https://www.google.com/maps?q='+p[2]+','+p[3]+'">Open in Google Maps</a>');
  setTimeout(()=>hl.openPopup(),1300);
 }
-function search(){
- const raw=ud(document.getElementById('q').value.trim());if(!raw){R.style.display='none';return;}
- const parts=raw.split(/[\s,\-\/]+/).filter(Boolean);
- let pr=null,pl=raw;
- if(parts.length>=2){pr=norm(parts[0]);pl=parts.slice(1).join('');}
- const n=norm(pl);
- let m=P.filter(p=>norm(p[0])===n&&(!pr||norm(p[1])===pr));
- if(!m.length&&pr){m=P.filter(p=>norm(p[0])===n);}
- R.innerHTML='';
- if(!m.length){R.innerHTML='<div class="hint">Plot number not found. It may not be printed on the master plan.</div>';R.style.display='block';return;}
- if(m.length===1){show(m[0]);return;}
- R.innerHTML='<div class="hint">'+m.length+' matches found – choose one:</div>';
- m.sort((a,b)=>(a[1]||'zz').localeCompare(b[1]||'zz',undefined,{numeric:true})).forEach(p=>{const d=document.createElement('div');d.textContent='Plot '+p[0]+' — '+(p[1]?'Precinct '+p[1]:'Precinct ?');d.onclick=()=>show(p);R.appendChild(d);});
- R.style.display='block';
-}
-document.getElementById('go').onclick=search;
-document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')search();});
+let tmr;Q.addEventListener('input',()=>{clearTimeout(tmr);tmr=setTimeout(()=>suggest(false),120);});
+Q.addEventListener('focus',()=>{if(Q.value.trim())suggest(false);});
+document.getElementById('go').onclick=()=>suggest(true);
+Q.addEventListener('keydown',e=>{if(e.key==='Enter')suggest(true);});
 map.on('click',()=>R.style.display='none');
 </script>
 </body>
