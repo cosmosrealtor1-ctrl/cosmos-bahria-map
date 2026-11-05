@@ -1,123 +1,1403 @@
-{"societies": [{"code": "BTK","name": "Bahria Town Karachi","plots": "plots.json","areas": [
-{"name": "Precinct 1","type": "precinct","precinct": "1","center": [24.998001,67.311653],"bounds": [[24.99107,67.3067],[25.00217,67.31592]]},
-{"name": "Precinct 2","type": "precinct","precinct": "2","center": [25.006389,67.305424],"bounds": [[25.00368,67.30536],[25.0106,67.31106]]},
-{"name": "Precinct 3","type": "precinct","precinct": "3","center": [25.016056,67.303587],"bounds": [[25.0117,67.29975],[25.0219,67.30823]]},
-{"name": "Precinct 4","type": "precinct","precinct": "4","center": [25.031845,67.299929],"bounds": [[25.02275,67.2974],[25.03616,67.30445]]},
-{"name": "Precinct 5","type": "precinct","precinct": "5","center": [25.027472,67.30533],"bounds": [[25.0228,67.29856],[25.03059,67.31169]]},
-{"name": "Precinct 6","type": "precinct","precinct": "6","center": [25.034683,67.305],"bounds": [[25.03156,67.30196],[25.04143,67.31175]]},
-{"name": "Precinct 7","type": "precinct","precinct": "7","center": [25.046972,67.302718],"bounds": [[25.04409,67.30114],[25.0563,67.30774]]},
-{"name": "Precinct 8","type": "precinct","precinct": "8","center": [25.044773,67.311929],"bounds": [[25.04029,67.30824],[25.05144,67.32022]],"aka": "Bahria Hills"},
-{"name": "Precinct 9","type": "precinct","precinct": "9","center": [25.03812,67.319386],"bounds": [[25.02984,67.31305],[25.04908,67.32196]],"aka": "Bahria Hills"},
-{"name": "Precinct 10","type": "precinct","precinct": "10","center": [25.03978,67.301395],"bounds": [[25.03658,67.29961],[25.04273,67.3065]]},
-{"name": "Precinct 11","type": "precinct","precinct": "11","center": [25.058653,67.316243],"bounds": [[25.05205,67.30635],[25.06071,67.31985]]},
-{"name": "Precinct 12","type": "precinct","precinct": "12","center": [25.059742,67.322914],"bounds": [[25.05231,67.31963],[25.06182,67.32932]],"aka": "Ali Block"},
-{"name": "Precinct 14","type": "precinct","precinct": "14","center": [25.057922,67.33111],"r": 450,"src": "OSM"},
-{"name": "Precinct 15","type": "precinct","precinct": "15","center": [25.060527,67.340235],"r": 450,"src": "OSM"},
-{"name": "Precinct 15A","type": "precinct","precinct": "15A","center": [25.058206,67.335451],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 15B","type": "precinct","precinct": "15B","center": [25.059555,67.342344],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 16","type": "precinct","precinct": "16","center": [25.042796,67.328182],"bounds": [[25.0367,67.32056],[25.04799,67.33554]]},
-{"name": "Precinct 17","type": "precinct","precinct": "17","center": [25.030056,67.320196],"bounds": [[25.02793,67.31343],[25.03431,67.32931]]},
-{"name": "Precinct 18","type": "precinct","precinct": "18","center": [25.022166,67.334736],"bounds": [[25.0137,67.32653],[25.02688,67.34031]]},
-{"name": "Precinct 19","type": "precinct","precinct": "19","center": [25.012866,67.313649],"bounds": [[25.00856,67.30836],[25.01919,67.32417]]},
-{"name": "Precinct 20","type": "precinct","precinct": "20","center": [25.087576,67.327117],"r": 450,"aka": "Golf View Residencia","src": "OSM"},
-{"name": "Precinct 21","type": "precinct","precinct": "21","center": [25.080607,67.307212],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 22","type": "precinct","precinct": "22","center": [25.11043,67.316368],"r": 450,"src": "OSM"},
-{"name": "Precinct 23","type": "precinct","precinct": "23","center": [25.117704,67.317253],"r": 450,"src": "OSM"},
-{"name": "Precinct 23A","type": "precinct","precinct": "23A","center": [25.122459,67.324522],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 25","type": "precinct","precinct": "25","center": [25.104186,67.326738],"r": 450,"src": "OSM"},
-{"name": "Precinct 25A","type": "precinct","precinct": "25A","center": [25.111046,67.33297],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 26A","type": "precinct","precinct": "26A","center": [25.106069,67.339677],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 27","type": "precinct","precinct": "27","center": [25.073638,67.343495],"r": 450,"src": "OSM"},
-{"name": "Precinct 27A","type": "precinct","precinct": "27A","center": [25.070911,67.328157],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 28","type": "precinct","precinct": "28","center": [25.083404,67.350268],"r": 450,"src": "OSM"},
-{"name": "Precinct 29","type": "precinct","precinct": "29","center": [25.095198,67.353313],"r": 450,"src": "OSM"},
-{"name": "Precinct 29A","type": "precinct","precinct": "29A","center": [25.099041,67.367238],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 29B","type": "precinct","precinct": "29B","center": [25.097314,67.37801],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 29C","type": "precinct","precinct": "29C","center": [25.089472,67.385246],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 29D","type": "precinct","precinct": "29D","center": [25.072623,67.381969],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 30","type": "precinct","precinct": "30","center": [25.105887,67.352918],"r": 450,"src": "OSM"},
-{"name": "Precinct 31","type": "precinct","precinct": "31","center": [25.112331,67.357309],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 32","type": "precinct","precinct": "32","center": [25.114885,67.370573],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 32A","type": "precinct","precinct": "32A","center": [25.108352,67.378037],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 32B","type": "precinct","precinct": "32B","center": [25.117923,67.387178],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 32C","type": "precinct","precinct": "32C","center": [25.109285,67.391292],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 32D","type": "precinct","precinct": "32D","center": [25.092915,67.396162],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 33","type": "precinct","precinct": "33","center": [25.132101,67.378501],"r": 450,"src": "OSM"},
-{"name": "Precinct 33A","type": "precinct","precinct": "33A","center": [25.127566,67.392028],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 33B","type": "precinct","precinct": "33B","center": [25.125458,67.402589],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 33C","type": "precinct","precinct": "33C","center": [25.11973,67.408034],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 33D","type": "precinct","precinct": "33D","center": [25.111025,67.402444],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 34","type": "precinct","precinct": "34","center": [25.135283,67.364879],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 35","type": "precinct","precinct": "35","center": [25.118265,67.357874],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 36","type": "precinct","precinct": "36","center": [25.122228,67.350173],"r": 450,"src": "OSM"},
-{"name": "Precinct 37","type": "precinct","precinct": "37","center": [25.136267,67.352147],"r": 450,"src": "OSM"},
-{"name": "Precinct 38","type": "precinct","precinct": "38","center": [25.152845,67.353395],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 39","type": "precinct","precinct": "39","center": [25.155429,67.342126],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 40","type": "precinct","precinct": "40","center": [25.149106,67.367303],"r": 450,"src": "OSM"},
-{"name": "Precinct 41","type": "precinct","precinct": "41","center": [25.14637,67.384726],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 42","type": "precinct","precinct": "42","center": [25.141536,67.410335],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 42A","type": "precinct","precinct": "42A","center": [25.147341,67.400346],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 43","type": "precinct","precinct": "43","center": [25.133864,67.403003],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 44","type": "precinct","precinct": "44","center": [25.131911,67.422604],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 45","type": "precinct","precinct": "45","center": [25.139126,67.424995],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 46","type": "precinct","precinct": "46","center": [25.035046,67.340169],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 47","type": "precinct","precinct": "47","center": [25.043809,67.340267],"r": 450,"src": "OSM"},
-{"name": "Precinct 48","type": "precinct","precinct": "48","center": [25.043715,67.348179],"r": 450,"src": "OSM"},
-{"name": "Precinct 49","type": "precinct","precinct": "49","center": [25.05371,67.34231],"r": 450,"src": "OSM"},
-{"name": "Precinct 50","type": "precinct","precinct": "50","center": [25.057807,67.351569],"r": 450,"src": "OSM"},
-{"name": "Precinct 51","type": "precinct","precinct": "51","center": [25.048918,67.359646],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 52","type": "precinct","precinct": "52","center": [25.039483,67.360721],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 53","type": "precinct","precinct": "53","center": [25.044668,67.369045],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 54","type": "precinct","precinct": "54","center": [25.060406,67.369587],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 55","type": "precinct","precinct": "55","center": [25.06226,67.360347],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 56","type": "precinct","precinct": "56","center": [25.075324,67.368353],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 57","type": "precinct","precinct": "57","center": [25.068761,67.373031],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Precinct 58","type": "precinct","precinct": "58","center": [25.077931,67.360291],"r": 450,"src": "key plan (approx. ±500 m)"},
-{"name": "Adventure Land","type": "area","center": [25.021849,67.311584],"r": 300},
-{"name": "Bahria Heights","type": "area","center": [25.049035,67.309476],"r": 250},
-{"name": "Bahria Hills","type": "area","center": [25.035908,67.316261],"r": 500,"precinct": "9"},
-{"name": "Bahria Paradise","type": "area","center": [25.044573,67.356887],"r": 600,"src": "OSM"},
-{"name": "Bahria Sports City","type": "area","center": [25.138144,67.371353],"r": 600,"src": "OSM"},
-{"name": "Botanical Garden","type": "area","center": [25.032721,67.358885],"r": 600,"src": "key plan (approx. ±500 m)"},
-{"name": "Camp Office","type": "area","center": [25.000609,67.316326],"r": 150},
-{"name": "Carnival","type": "area","center": [24.996354,67.31808],"r": 150},
-{"name": "Cinepax Midway","type": "area","center": [25.027447,67.308712],"r": 150},
-{"name": "Cricket Stadium","type": "area","center": [25.127493,67.35975],"r": 600,"src": "OSM"},
-{"name": "Danzoo","type": "area","center": [25.014808,67.3227],"r": 350},
-{"name": "Dascon Towers","type": "area","center": [25.051771,67.319851],"r": 150},
-{"name": "Farm Houses","type": "area","center": [25.025493,67.334879],"r": 600,"src": "OSM"},
-{"name": "Garden + Zoo","type": "area","center": [24.993911,67.315846],"r": 150},
-{"name": "Golf View Residencia (Golf City)","type": "area","center": [25.087576,67.327117],"r": 600,"src": "OSM"},
-{"name": "Grand Fountain","type": "area","center": [25.019608,67.324902],"r": 150},
-{"name": "Grand Jamia Masjid","type": "area","center": [25.048468,67.325217],"r": 250},
-{"name": "Heritage","type": "area","center": [25.017903,67.320338],"r": 250},
-{"name": "Hospital","type": "area","center": [25.013641,67.311166],"r": 150},
-{"name": "Imtiaz Mega","type": "area","center": [25.01727,67.317198],"r": 150},
-{"name": "Iqbal Plots","type": "area","center": [25.009268,67.309412],"r": 250},
-{"name": "Iqbal Villas","type": "area","center": [25.02951,67.302954],"r": 300},
-{"name": "Jinnah Avenue","type": "area","center": [25.01324,67.308939],"r": 300},
-{"name": "Jinnah Avenue Commercial A","type": "area","center": [25.009532,67.31143],"r": 250},
-{"name": "Jinnah Avenue Commercial B","type": "area","center": [25.009338,67.309871],"r": 250},
-{"name": "Jinnah Avenue Commercial B (2019)","type": "area","center": [24.999862,67.313742],"r": 250},
-{"name": "Jinnah Avenue-II Commercial A","type": "area","center": [25.000359,67.315021],"r": 250},
-{"name": "Lake View","type": "area","center": [25.013783,67.320019],"r": 250},
-{"name": "Langeji River Bridge","type": "area","center": [24.994393,67.320761],"r": 200},
-{"name": "Legacy","type": "area","center": [25.018253,67.31582],"r": 200},
-{"name": "Liberty Commercial","type": "area","center": [25.023823,67.30625],"r": 250},
-{"name": "Little Bahria","type": "area","center": [25.034246,67.312925],"r": 300},
-{"name": "Main Gate (Gatehouse)","type": "area","center": [24.994009,67.31683],"r": 150},
-{"name": "Malik Square","type": "area","center": [25.021469,67.303458],"r": 150},
-{"name": "Midway Commercial","type": "area","center": [25.028795,67.307557],"r": 350,"precinct": "5"},
-{"name": "Model Block","type": "area","center": [25.013102,67.323265],"r": 600,"src": "key plan (approx. ±500 m)"},
-{"name": "Overseas Block","type": "area","center": [24.992651,67.309308],"r": 600,"src": "key plan (approx. ±500 m)"},
-{"name": "Paragon Tower","type": "area","center": [25.034029,67.329486],"r": 150},
-{"name": "Phase-3 Extension","type": "area","center": [25.095229,67.352583],"r": 600,"src": "OSM"},
-{"name": "Quaid Commercial","type": "area","center": [25.004914,67.305602],"r": 300},
-{"name": "Rendezvous","type": "area","center": [24.99251,67.31232],"r": 150},
-{"name": "Roots Millennium School","type": "area","center": [25.000757,67.308304],"r": 150},
-{"name": "Safari Park","type": "area","center": [25.015026,67.326314],"r": 500},
-{"name": "Sports & Athletic Field","type": "area","center": [25.000344,67.308711],"r": 150},
-{"name": "Tauheed Square","type": "area","center": [24.99672,67.315742],"r": 150},
-{"name": "University","type": "area","center": [25.048797,67.327036],"r": 250},
-{"name": "Urban Forest","type": "area","center": [25.008148,67.32304],"r": 300},
-{"name": "Valley View","type": "area","center": [25.019318,67.307653],"r": 250}]}]}
+{
+ "societies": [
+  {
+   "code": "BTK",
+   "name": "Bahria Town Karachi",
+   "plots": "plots.json",
+   "areas": [
+    {
+     "name": "Precinct 1",
+     "type": "precinct",
+     "precinct": "1",
+     "center": [
+      24.996734,
+      67.309856
+     ],
+     "bounds": [
+      [
+       24.991291,
+       67.305203
+      ],
+      [
+       25.001926,
+       67.31358
+      ]
+     ],
+     "src": "v4 precinct plan fit"
+    },
+    {
+     "name": "Precinct 2",
+     "type": "precinct",
+     "precinct": "2",
+     "center": [
+      25.007184,
+      67.307546
+     ],
+     "bounds": [
+      [
+       25.003419,
+       67.305048
+      ],
+      [
+       25.012227,
+       67.311238
+      ]
+     ],
+     "src": "v4 precinct plan fit"
+    },
+    {
+     "name": "Precinct 3",
+     "type": "precinct",
+     "precinct": "3",
+     "center": [
+      25.014198,
+      67.3045
+     ],
+     "bounds": [
+      [
+       25.00974,
+       67.301391
+      ],
+      [
+       25.018644,
+       67.30749
+      ]
+     ],
+     "src": "v4 precinct plan fit"
+    },
+    {
+     "name": "Precinct 4",
+     "type": "precinct",
+     "precinct": "4",
+     "center": [
+      25.031845,
+      67.299929
+     ],
+     "bounds": [
+      [
+       25.02275,
+       67.2974
+      ],
+      [
+       25.03616,
+       67.30445
+      ]
+     ]
+    },
+    {
+     "name": "Precinct 5",
+     "type": "precinct",
+     "precinct": "5",
+     "center": [
+      25.027472,
+      67.30533
+     ],
+     "bounds": [
+      [
+       25.0228,
+       67.29856
+      ],
+      [
+       25.03059,
+       67.31169
+      ]
+     ]
+    },
+    {
+     "name": "Precinct 6",
+     "type": "precinct",
+     "precinct": "6",
+     "center": [
+      25.034683,
+      67.305
+     ],
+     "bounds": [
+      [
+       25.03156,
+       67.30196
+      ],
+      [
+       25.04143,
+       67.31175
+      ]
+     ]
+    },
+    {
+     "name": "Precinct 7",
+     "type": "precinct",
+     "precinct": "7",
+     "center": [
+      25.046972,
+      67.302718
+     ],
+     "bounds": [
+      [
+       25.04409,
+       67.30114
+      ],
+      [
+       25.0563,
+       67.30774
+      ]
+     ]
+    },
+    {
+     "name": "Precinct 8",
+     "type": "precinct",
+     "precinct": "8",
+     "center": [
+      25.044773,
+      67.311929
+     ],
+     "bounds": [
+      [
+       25.04029,
+       67.30824
+      ],
+      [
+       25.05144,
+       67.32022
+      ]
+     ],
+     "aka": "Bahria Hills"
+    },
+    {
+     "name": "Precinct 9",
+     "type": "precinct",
+     "precinct": "9",
+     "center": [
+      25.03812,
+      67.319386
+     ],
+     "bounds": [
+      [
+       25.02984,
+       67.31305
+      ],
+      [
+       25.04908,
+       67.32196
+      ]
+     ],
+     "aka": "Bahria Hills"
+    },
+    {
+     "name": "Precinct 10",
+     "type": "precinct",
+     "precinct": "10",
+     "center": [
+      25.03978,
+      67.301395
+     ],
+     "bounds": [
+      [
+       25.03658,
+       67.29961
+      ],
+      [
+       25.04273,
+       67.3065
+      ]
+     ]
+    },
+    {
+     "name": "Precinct 11",
+     "type": "precinct",
+     "precinct": "11",
+     "center": [
+      25.058653,
+      67.316243
+     ],
+     "bounds": [
+      [
+       25.05205,
+       67.30635
+      ],
+      [
+       25.06071,
+       67.31985
+      ]
+     ]
+    },
+    {
+     "name": "Precinct 12",
+     "type": "precinct",
+     "precinct": "12",
+     "center": [
+      25.059742,
+      67.322914
+     ],
+     "bounds": [
+      [
+       25.05231,
+       67.31963
+      ],
+      [
+       25.06182,
+       67.32932
+      ]
+     ],
+     "aka": "Ali Block"
+    },
+    {
+     "name": "Precinct 14",
+     "type": "precinct",
+     "precinct": "14",
+     "center": [
+      25.057922,
+      67.33111
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 15",
+     "type": "precinct",
+     "precinct": "15",
+     "center": [
+      25.060527,
+      67.340235
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 15A",
+     "type": "precinct",
+     "precinct": "15A",
+     "center": [
+      25.058206,
+      67.335451
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 15B",
+     "type": "precinct",
+     "precinct": "15B",
+     "center": [
+      25.059555,
+      67.342344
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 16",
+     "type": "precinct",
+     "precinct": "16",
+     "center": [
+      25.042796,
+      67.328182
+     ],
+     "bounds": [
+      [
+       25.0367,
+       67.32056
+      ],
+      [
+       25.04799,
+       67.33554
+      ]
+     ]
+    },
+    {
+     "name": "Precinct 17",
+     "type": "precinct",
+     "precinct": "17",
+     "center": [
+      25.030056,
+      67.320196
+     ],
+     "bounds": [
+      [
+       25.02793,
+       67.31343
+      ],
+      [
+       25.03431,
+       67.32931
+      ]
+     ]
+    },
+    {
+     "name": "Precinct 18",
+     "type": "precinct",
+     "precinct": "18",
+     "center": [
+      25.022166,
+      67.334736
+     ],
+     "bounds": [
+      [
+       25.0137,
+       67.32653
+      ],
+      [
+       25.02688,
+       67.34031
+      ]
+     ]
+    },
+    {
+     "name": "Precinct 19",
+     "type": "precinct",
+     "precinct": "19",
+     "center": [
+      25.012866,
+      67.313649
+     ],
+     "bounds": [
+      [
+       25.00856,
+       67.30836
+      ],
+      [
+       25.01919,
+       67.32417
+      ]
+     ]
+    },
+    {
+     "name": "Precinct 20",
+     "type": "precinct",
+     "precinct": "20",
+     "center": [
+      25.087576,
+      67.327117
+     ],
+     "r": 450,
+     "aka": "Golf View Residencia",
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 21",
+     "type": "precinct",
+     "precinct": "21",
+     "center": [
+      25.080607,
+      67.307212
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 22",
+     "type": "precinct",
+     "precinct": "22",
+     "center": [
+      25.11043,
+      67.316368
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 23",
+     "type": "precinct",
+     "precinct": "23",
+     "center": [
+      25.117704,
+      67.317253
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 23A",
+     "type": "precinct",
+     "precinct": "23A",
+     "center": [
+      25.122459,
+      67.324522
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 25",
+     "type": "precinct",
+     "precinct": "25",
+     "center": [
+      25.104186,
+      67.326738
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 25A",
+     "type": "precinct",
+     "precinct": "25A",
+     "center": [
+      25.111046,
+      67.33297
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 26A",
+     "type": "precinct",
+     "precinct": "26A",
+     "center": [
+      25.106069,
+      67.339677
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 27",
+     "type": "precinct",
+     "precinct": "27",
+     "center": [
+      25.073638,
+      67.343495
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 27A",
+     "type": "precinct",
+     "precinct": "27A",
+     "center": [
+      25.070911,
+      67.328157
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 28",
+     "type": "precinct",
+     "precinct": "28",
+     "center": [
+      25.083404,
+      67.350268
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 29",
+     "type": "precinct",
+     "precinct": "29",
+     "center": [
+      25.095198,
+      67.353313
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 29A",
+     "type": "precinct",
+     "precinct": "29A",
+     "center": [
+      25.099041,
+      67.367238
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 29B",
+     "type": "precinct",
+     "precinct": "29B",
+     "center": [
+      25.097314,
+      67.37801
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 29C",
+     "type": "precinct",
+     "precinct": "29C",
+     "center": [
+      25.089472,
+      67.385246
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 29D",
+     "type": "precinct",
+     "precinct": "29D",
+     "center": [
+      25.072623,
+      67.381969
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 30",
+     "type": "precinct",
+     "precinct": "30",
+     "center": [
+      25.105887,
+      67.352918
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 31",
+     "type": "precinct",
+     "precinct": "31",
+     "center": [
+      25.112331,
+      67.357309
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 32",
+     "type": "precinct",
+     "precinct": "32",
+     "center": [
+      25.114885,
+      67.370573
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 32A",
+     "type": "precinct",
+     "precinct": "32A",
+     "center": [
+      25.108352,
+      67.378037
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 32B",
+     "type": "precinct",
+     "precinct": "32B",
+     "center": [
+      25.117923,
+      67.387178
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 32C",
+     "type": "precinct",
+     "precinct": "32C",
+     "center": [
+      25.109285,
+      67.391292
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 32D",
+     "type": "precinct",
+     "precinct": "32D",
+     "center": [
+      25.092915,
+      67.396162
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 33",
+     "type": "precinct",
+     "precinct": "33",
+     "center": [
+      25.132101,
+      67.378501
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 33A",
+     "type": "precinct",
+     "precinct": "33A",
+     "center": [
+      25.127566,
+      67.392028
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 33B",
+     "type": "precinct",
+     "precinct": "33B",
+     "center": [
+      25.125458,
+      67.402589
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 33C",
+     "type": "precinct",
+     "precinct": "33C",
+     "center": [
+      25.11973,
+      67.408034
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 33D",
+     "type": "precinct",
+     "precinct": "33D",
+     "center": [
+      25.111025,
+      67.402444
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 34",
+     "type": "precinct",
+     "precinct": "34",
+     "center": [
+      25.135283,
+      67.364879
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 35",
+     "type": "precinct",
+     "precinct": "35",
+     "center": [
+      25.118265,
+      67.357874
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 36",
+     "type": "precinct",
+     "precinct": "36",
+     "center": [
+      25.122228,
+      67.350173
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 37",
+     "type": "precinct",
+     "precinct": "37",
+     "center": [
+      25.136267,
+      67.352147
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 38",
+     "type": "precinct",
+     "precinct": "38",
+     "center": [
+      25.152845,
+      67.353395
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 39",
+     "type": "precinct",
+     "precinct": "39",
+     "center": [
+      25.155429,
+      67.342126
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 40",
+     "type": "precinct",
+     "precinct": "40",
+     "center": [
+      25.149106,
+      67.367303
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 41",
+     "type": "precinct",
+     "precinct": "41",
+     "center": [
+      25.14637,
+      67.384726
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 42",
+     "type": "precinct",
+     "precinct": "42",
+     "center": [
+      25.141536,
+      67.410335
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 42A",
+     "type": "precinct",
+     "precinct": "42A",
+     "center": [
+      25.147341,
+      67.400346
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 43",
+     "type": "precinct",
+     "precinct": "43",
+     "center": [
+      25.133864,
+      67.403003
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 44",
+     "type": "precinct",
+     "precinct": "44",
+     "center": [
+      25.131911,
+      67.422604
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 45",
+     "type": "precinct",
+     "precinct": "45",
+     "center": [
+      25.139126,
+      67.424995
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 46",
+     "type": "precinct",
+     "precinct": "46",
+     "center": [
+      25.035046,
+      67.340169
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 47",
+     "type": "precinct",
+     "precinct": "47",
+     "center": [
+      25.043809,
+      67.340267
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 48",
+     "type": "precinct",
+     "precinct": "48",
+     "center": [
+      25.043715,
+      67.348179
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 49",
+     "type": "precinct",
+     "precinct": "49",
+     "center": [
+      25.05371,
+      67.34231
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 50",
+     "type": "precinct",
+     "precinct": "50",
+     "center": [
+      25.057807,
+      67.351569
+     ],
+     "r": 450,
+     "src": "OSM"
+    },
+    {
+     "name": "Precinct 51",
+     "type": "precinct",
+     "precinct": "51",
+     "center": [
+      25.048918,
+      67.359646
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 52",
+     "type": "precinct",
+     "precinct": "52",
+     "center": [
+      25.039483,
+      67.360721
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 53",
+     "type": "precinct",
+     "precinct": "53",
+     "center": [
+      25.044668,
+      67.369045
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 54",
+     "type": "precinct",
+     "precinct": "54",
+     "center": [
+      25.060406,
+      67.369587
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 55",
+     "type": "precinct",
+     "precinct": "55",
+     "center": [
+      25.06226,
+      67.360347
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 56",
+     "type": "precinct",
+     "precinct": "56",
+     "center": [
+      25.075324,
+      67.368353
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 57",
+     "type": "precinct",
+     "precinct": "57",
+     "center": [
+      25.068761,
+      67.373031
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Precinct 58",
+     "type": "precinct",
+     "precinct": "58",
+     "center": [
+      25.077931,
+      67.360291
+     ],
+     "r": 450,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Adventure Land",
+     "type": "area",
+     "center": [
+      25.021849,
+      67.311584
+     ],
+     "r": 300
+    },
+    {
+     "name": "Bahria Heights",
+     "type": "area",
+     "center": [
+      25.049035,
+      67.309476
+     ],
+     "r": 250
+    },
+    {
+     "name": "Bahria Hills",
+     "type": "area",
+     "center": [
+      25.035908,
+      67.316261
+     ],
+     "r": 500,
+     "precinct": "9"
+    },
+    {
+     "name": "Bahria Paradise",
+     "type": "area",
+     "center": [
+      25.044573,
+      67.356887
+     ],
+     "r": 600,
+     "src": "OSM"
+    },
+    {
+     "name": "Bahria Sports City",
+     "type": "area",
+     "center": [
+      25.138144,
+      67.371353
+     ],
+     "r": 600,
+     "src": "OSM"
+    },
+    {
+     "name": "Botanical Garden",
+     "type": "area",
+     "center": [
+      25.032721,
+      67.358885
+     ],
+     "r": 600,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Camp Office",
+     "type": "area",
+     "center": [
+      25.000609,
+      67.316326
+     ],
+     "r": 150
+    },
+    {
+     "name": "Carnival",
+     "type": "area",
+     "center": [
+      24.996354,
+      67.31808
+     ],
+     "r": 150
+    },
+    {
+     "name": "Cinepax Midway",
+     "type": "area",
+     "center": [
+      25.027447,
+      67.308712
+     ],
+     "r": 150
+    },
+    {
+     "name": "Cricket Stadium",
+     "type": "area",
+     "center": [
+      25.127493,
+      67.35975
+     ],
+     "r": 600,
+     "src": "OSM"
+    },
+    {
+     "name": "Danzoo",
+     "type": "area",
+     "center": [
+      25.014808,
+      67.3227
+     ],
+     "r": 350
+    },
+    {
+     "name": "Dascon Towers",
+     "type": "area",
+     "center": [
+      25.051771,
+      67.319851
+     ],
+     "r": 150
+    },
+    {
+     "name": "Farm Houses",
+     "type": "area",
+     "center": [
+      25.025493,
+      67.334879
+     ],
+     "r": 600,
+     "src": "OSM"
+    },
+    {
+     "name": "Garden + Zoo",
+     "type": "area",
+     "center": [
+      24.993911,
+      67.315846
+     ],
+     "r": 150
+    },
+    {
+     "name": "Golf View Residencia (Golf City)",
+     "type": "area",
+     "center": [
+      25.087576,
+      67.327117
+     ],
+     "r": 600,
+     "src": "OSM"
+    },
+    {
+     "name": "Grand Fountain",
+     "type": "area",
+     "center": [
+      25.019608,
+      67.324902
+     ],
+     "r": 150
+    },
+    {
+     "name": "Grand Jamia Masjid",
+     "type": "area",
+     "center": [
+      25.048468,
+      67.325217
+     ],
+     "r": 250
+    },
+    {
+     "name": "Heritage",
+     "type": "area",
+     "center": [
+      25.017903,
+      67.320338
+     ],
+     "r": 250
+    },
+    {
+     "name": "Hospital",
+     "type": "area",
+     "center": [
+      25.013641,
+      67.311166
+     ],
+     "r": 150
+    },
+    {
+     "name": "Imtiaz Mega",
+     "type": "area",
+     "center": [
+      25.01727,
+      67.317198
+     ],
+     "r": 150
+    },
+    {
+     "name": "Iqbal Plots",
+     "type": "area",
+     "center": [
+      25.009268,
+      67.309412
+     ],
+     "r": 250
+    },
+    {
+     "name": "Iqbal Villas",
+     "type": "area",
+     "center": [
+      25.02951,
+      67.302954
+     ],
+     "r": 300
+    },
+    {
+     "name": "Jinnah Avenue",
+     "type": "area",
+     "center": [
+      25.01324,
+      67.308939
+     ],
+     "r": 300
+    },
+    {
+     "name": "Jinnah Avenue Commercial A",
+     "type": "area",
+     "center": [
+      25.009532,
+      67.31143
+     ],
+     "r": 250
+    },
+    {
+     "name": "Jinnah Avenue Commercial B",
+     "type": "area",
+     "center": [
+      25.009338,
+      67.309871
+     ],
+     "r": 250
+    },
+    {
+     "name": "Jinnah Avenue Commercial B (2019)",
+     "type": "area",
+     "center": [
+      24.999862,
+      67.313742
+     ],
+     "r": 250
+    },
+    {
+     "name": "Jinnah Avenue-II Commercial A",
+     "type": "area",
+     "center": [
+      25.000359,
+      67.315021
+     ],
+     "r": 250
+    },
+    {
+     "name": "Lake View",
+     "type": "area",
+     "center": [
+      25.013783,
+      67.320019
+     ],
+     "r": 250
+    },
+    {
+     "name": "Langeji River Bridge",
+     "type": "area",
+     "center": [
+      24.994393,
+      67.320761
+     ],
+     "r": 200
+    },
+    {
+     "name": "Legacy",
+     "type": "area",
+     "center": [
+      25.018253,
+      67.31582
+     ],
+     "r": 200
+    },
+    {
+     "name": "Liberty Commercial",
+     "type": "area",
+     "center": [
+      25.023823,
+      67.30625
+     ],
+     "r": 250
+    },
+    {
+     "name": "Little Bahria",
+     "type": "area",
+     "center": [
+      25.034246,
+      67.312925
+     ],
+     "r": 300
+    },
+    {
+     "name": "Main Gate (Gatehouse)",
+     "type": "area",
+     "center": [
+      24.994009,
+      67.31683
+     ],
+     "r": 150
+    },
+    {
+     "name": "Malik Square",
+     "type": "area",
+     "center": [
+      25.021469,
+      67.303458
+     ],
+     "r": 150
+    },
+    {
+     "name": "Midway Commercial",
+     "type": "area",
+     "center": [
+      25.028795,
+      67.307557
+     ],
+     "r": 350,
+     "precinct": "5"
+    },
+    {
+     "name": "Model Block",
+     "type": "area",
+     "center": [
+      25.013102,
+      67.323265
+     ],
+     "r": 600,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Overseas Block",
+     "type": "area",
+     "center": [
+      24.992651,
+      67.309308
+     ],
+     "r": 600,
+     "src": "key plan (approx. ±500 m)"
+    },
+    {
+     "name": "Paragon Tower",
+     "type": "area",
+     "center": [
+      25.034029,
+      67.329486
+     ],
+     "r": 150
+    },
+    {
+     "name": "Phase-3 Extension",
+     "type": "area",
+     "center": [
+      25.095229,
+      67.352583
+     ],
+     "r": 600,
+     "src": "OSM"
+    },
+    {
+     "name": "Quaid Commercial",
+     "type": "area",
+     "center": [
+      25.004914,
+      67.305602
+     ],
+     "r": 300
+    },
+    {
+     "name": "Rendezvous",
+     "type": "area",
+     "center": [
+      24.99251,
+      67.31232
+     ],
+     "r": 150
+    },
+    {
+     "name": "Roots Millennium School",
+     "type": "area",
+     "center": [
+      25.000757,
+      67.308304
+     ],
+     "r": 150
+    },
+    {
+     "name": "Safari Park",
+     "type": "area",
+     "center": [
+      25.015026,
+      67.326314
+     ],
+     "r": 500
+    },
+    {
+     "name": "Sports & Athletic Field",
+     "type": "area",
+     "center": [
+      25.000344,
+      67.308711
+     ],
+     "r": 150
+    },
+    {
+     "name": "Tauheed Square",
+     "type": "area",
+     "center": [
+      24.99672,
+      67.315742
+     ],
+     "r": 150
+    },
+    {
+     "name": "University",
+     "type": "area",
+     "center": [
+      25.048797,
+      67.327036
+     ],
+     "r": 250
+    },
+    {
+     "name": "Urban Forest",
+     "type": "area",
+     "center": [
+      25.008148,
+      67.32304
+     ],
+     "r": 300
+    },
+    {
+     "name": "Valley View",
+     "type": "area",
+     "center": [
+      25.019318,
+      67.307653
+     ],
+     "r": 250
+    }
+   ]
+  }
+ ]
+}

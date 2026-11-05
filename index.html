@@ -44,6 +44,9 @@ footer a{color:#ffe082;text-decoration:none;direction:ltr}
 .leaflet-popup-content{font-size:17px;font-family:inherit}
 .leaflet-top.leaflet-left{top:76px}
 .leaflet-control-zoom a{width:44px!important;height:44px!important;line-height:44px!important;font-size:24px!important}
+#note{position:absolute;bottom:218px;left:10px;right:10px;z-index:999;background:rgba(11,93,59,.92);color:#fff;font-size:13px;padding:7px 34px 7px 10px;border-radius:10px;line-height:1.35}
+#note b{color:#ffe082}#note .x{position:absolute;right:6px;top:4px;background:none;border:0;color:#fff;font-size:20px}
+#note a{color:#ffe082}
 #toast{position:absolute;top:130px;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:10px 16px;border-radius:10px;z-index:1002;font-size:16px;display:none}
 </style>
 </head>
@@ -54,6 +57,7 @@ footer a{color:#ffe082;text-decoration:none;direction:ltr}
 <button class="btn" id="loc" title="My location">◎</button>
 <div id="results"></div>
 <div id="toast"></div>
+<div id="note"><b>Sample v4:</b> Precincts 1, 2 and 3 re-fitted from the precinct plans and checked against roads. Other areas still use the old fit (not checked yet). <a href="#" id="p123">Show P1–P3</a><button class="x" id="nx">×</button></div>
 <div id="panel">
  <div class="orow"><label>Map opacity: <b id="opv">55%</b></label><input id="op" type="range" min="0" max="100" value="55"><button class="btn sm" id="hide">Hide Map</button></div>
  <div class="grid"><button class="btn on" data-b="esri">Esri Satellite</button><button class="btn" data-b="esrih">Esri Hybrid</button><button class="btn" data-b="google">Google Satellite</button><button class="btn" data-b="googleh">Google Hybrid</button></div>
@@ -62,7 +66,8 @@ footer a{color:#ffe082;text-decoration:none;direction:ltr}
 <script src="lib/leaflet.js"></script>
 <script>
 const B=[[24.9855,67.2771],[25.0683,67.3594]];
-const map=L.map('map',{zoomControl:true,attributionControl:true,maxZoom:20,minZoom:12}).fitBounds(B);
+const SAMPLE=[[24.99129, 67.30096], [25.01884, 67.31422]];
+const map=L.map('map',{zoomControl:true,attributionControl:true,maxZoom:20,minZoom:12}).fitBounds(SAMPLE);
 map.zoomControl.setPosition('topleft');
 const esriImg=()=>L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:20,maxNativeZoom:19,attribution:'Esri',zIndex:1});
 map.createPane('labels');map.getPane('labels').style.zIndex=450;map.getPane('labels').style.pointerEvents='none';
@@ -125,14 +130,15 @@ function suggest(go){
   areaMatch(so,toks.join(' ').toLowerCase()).forEach(a=>{if(!items.some(i=>i.a===a&&!i.p))items.push({a,so});});
   if(toks.length===1&&/^\d+[a-z]?$/i.test(last)){const n=norm(last);plots.filter(p=>norm(p[0])===n).forEach(p=>items.push({p,so}));}
  }
- if(go&&items.length){const ps=items.filter(i=>i.p&&!i.alt);if(toks.length>=2&&ps.length===1){pick(ps[0]);return;}if(items.length===1||(!ps.length&&!items[0].p&&toks.length)){pick(items[0]);return;}}
+ if(go&&items.length){let ps=items.filter(i=>i.p&&!i.alt);const pr=ps.filter(i=>i.p[4]!=='C');if(pr.length===1)ps=pr;if(toks.length>=2&&ps.length===1){pick(ps[0]);return;}if(items.length===1||(!ps.length&&!items[0].p&&toks.length)){pick(items[0]);return;}}
+ items.sort((x,y)=>((x.p&&x.p[4]==='C')?1:0)-((y.p&&y.p[4]==='C')?1:0));
  render(items.slice(0,80),raw);
 }
 function render(items,raw){
  R.innerHTML='';
  if(!items.length){R.innerHTML='<div class="hint">No match. Try "BTK" to see all areas, or e.g. "17 707".</div>';R.style.display=raw?'block':'none';return;}
  items.forEach(i=>{const d=document.createElement('div');
-  if(i.p)d.innerHTML='<span class="tag p">PLOT</span><span>Plot <b>'+i.p[0]+'</b></span><span class="sub">'+i.so.code+' · Precinct '+(i.p[1]||'?')+(i.alt?' (other precinct)':'')+'</span>';
+  if(i.p)d.innerHTML='<span class="tag p">'+(i.p[4]==='C'?'COMM.':'PLOT')+'</span><span>'+(i.p[4]==='C'?'Commercial ':'Plot ')+'<b>'+i.p[0]+'</b></span><span class="sub">'+i.so.code+' · Precinct '+(i.p[1]||'?')+(i.alt?' (other precinct)':'')+'</span>';
   else d.innerHTML='<span class="tag'+(i.a.type==='precinct'?'':' a')+'">'+(i.a.type==='precinct'?'PRECINCT':'AREA')+'</span><span>'+i.a.name+(i.a.aka?' <span class="sub" style="margin:0">('+i.a.aka+')</span>':'')+'</span><span class="sub">'+(i.note||i.so.code)+'</span>';
   d.onclick=()=>pick(i);R.appendChild(d);});
  R.style.display='block';
@@ -152,7 +158,7 @@ function show(p){
  map.flyTo([p[2],p[3]],18,{duration:1.2});
  if(hl)map.removeLayer(hl);
  hl=L.marker([p[2],p[3]],{icon:L.divIcon({className:'',html:'<div class="hl"></div>',iconSize:[34,34]})}).addTo(map)
-  .bindPopup('<b>Plot '+p[0]+'</b><br>'+(p[1]?'Precinct '+p[1]:'Precinct unknown')+'<br><span style="font-size:13px;color:#777">Approximate location – may be off by about 20–50 m</span><br><a target="_blank" href="https://www.google.com/maps?q='+p[2]+','+p[3]+'">Open in Google Maps</a>');
+  .bindPopup('<b>'+(p[4]==='C'?'Commercial ':'Plot ')+p[0]+'</b><br>'+(p[1]?'Precinct '+p[1]:'Precinct unknown')+'<br><span style="font-size:13px;color:#777">'+(p[5]?('Precinct plan, fitted to roads (about ±5–10 m)'+(p[5]==='label'?'':'<br>Number filled in by sequence – please verify')):'Approximate location – may be off by about 20–50 m')+'</span><br><a target="_blank" href="https://www.google.com/maps?q='+p[2]+','+p[3]+'">Open in Google Maps</a>');
  setTimeout(()=>hl.openPopup(),1300);
 }
 let tmr;Q.addEventListener('input',()=>{clearTimeout(tmr);tmr=setTimeout(()=>suggest(false),120);});
@@ -160,6 +166,8 @@ Q.addEventListener('focus',()=>{if(Q.value.trim())suggest(false);});
 document.getElementById('go').onclick=()=>suggest(true);
 Q.addEventListener('keydown',e=>{if(e.key==='Enter')suggest(true);});
 map.on('click',()=>R.style.display='none');
+document.getElementById('nx').onclick=()=>document.getElementById('note').style.display='none';
+document.getElementById('p123').onclick=e=>{e.preventDefault();map.flyToBounds(SAMPLE,{duration:1});};
 </script>
 </body>
 </html>
